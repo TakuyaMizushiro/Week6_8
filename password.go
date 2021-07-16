@@ -23,8 +23,13 @@ func LengthEight(x string) bool { //8文字以上か判定
     }
 }
 
-//func Number(x string) string { //数字が入っているか判定
-
+//func Number(x string) bool { //数字が入っているか判定
+	// for _, r := range x {
+	// 	if '0' <= r && r <= '9' {
+	// 		return true
+	// 	}
+	// }
+	// return false
 //}
 
 //func Symbol(x string) string { //記号が入っているか判定
