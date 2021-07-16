@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "unicode/utf8"
+)
 
 //func UpperCase(x string) string { //大文字があるか判定
 
@@ -10,9 +13,15 @@ import "fmt"
 
 //}
 
-//func LengthEight(x string) string { //8文字以上か判定
+func LengthEight(x string) bool { //8文字以上か判定
 
-//}
+    if(utf8.RuneCountInString(ja) >= 8) {
+    	return true
+    }
+    else {
+    	return false
+    }
+}
 
 //func Number(x string) string { //数字が入っているか判定
 
@@ -30,7 +39,7 @@ func main() {
 
 	//UpperCase(s)
 	//LowerCase(s)
-	//LengthEight(s)
+	LengthEight(s)
 	//Number(s)
 	//Symbol(s)
 }
