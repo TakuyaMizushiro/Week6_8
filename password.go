@@ -30,7 +30,7 @@ func main() {
 
 	var checkEight bool = false
 	var largeCap bool = false
-
+  
 	fmt.Print("Input your password: ")
 	fmt.Scan(&s)
 
