@@ -43,13 +43,24 @@ func checkNumber(str string) bool {
 	}
 }
 
+func checkSymbol(str string) bool {
+	if "!" <= str && str <= "/" || ":" <= str && str <= "@" || "[" <= str && str <= "'" || "{" <= str && str <= "~" {
+		//fmt.Println("Large Capital OK")
+		return true
+	} else {
+		return false
+	}
+}
+
 func main() {
 	var s string
+	var count int = 0
 
 	var checkEight bool = false
 	var capitalLetter bool = false
 	var smallLetter bool = false
 	var number bool = false
+	var symbol bool = false
 
 	fmt.Print("Input your password: ")
 	fmt.Scan(&s)
@@ -62,18 +73,28 @@ func main() {
 	for _, str := range arr {
 		if capitalLetter == false && checkCapitalLetter(str) {
 			capitalLetter = true
+			count++
 		}
 
 		if smallLetter == false && checkSmallLetter(str) {
 			smallLetter = true
+			count++
 		}
 
 		if number == false && checkNumber(str) {
 			number = true
+			count++
+		}
+		if symbol == false && checkSymbol(str) {
+			symbol = true
+			count++
 		}
 	}
 	//八文字以上か確認、あるならtrue
 	checkEight = LengthEight(s)
+	if checkEight == true { //Add
+		count++
+	}
 
 	//すべての項目について確認し、安全性を標準出力
 	if checkEight == true && capitalLetter == true && smallLetter == true {
@@ -93,6 +114,11 @@ func main() {
 		if number == false {
 			fmt.Println("・数字が含まれていません")
 		}
+		if symbol == false {
+			fmt.Println("・記号が含まれていません")
+		}
 	}
+
+	fmt.Println("安全レベル:", count, "(MAX 5)")
 
 }

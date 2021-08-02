@@ -82,3 +82,21 @@ func TestCount08(t *testing.T) {
 		t.Error("TestCount08 is failed")
 	}
 }
+
+func TestCount09(t *testing.T) {
+	//記号が含まれているかの確認(記号なし)
+	var s string
+	s = "aisyJgkhdf"
+	if checkSymbol(s) == true {
+		t.Error("TestCount09 is failed")
+	}
+}
+
+func TestCount10(t *testing.T) {
+	//記号が含まれているかの確認（記号あり）
+	var s string
+	s = "%$ais#yJgkhdf"
+	if checkSymbol(s) != true {
+		t.Error("TestCount10 is failed")
+	}
+}
