@@ -97,7 +97,7 @@ func main() {
 	}
 
 	//すべての項目について確認し、安全性を標準出力
-	if checkEight == true && capitalLetter == true && smallLetter == true {
+	if checkEight == true && capitalLetter == true && smallLetter == true && number == true && symbol == true {
 		//secure = true
 		fmt.Println("入力された文字列は安全です")
 	} else {
