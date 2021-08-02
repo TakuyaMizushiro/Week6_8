@@ -119,6 +119,27 @@ func main() {
 		}
 	}
 
+	for i := 0; i < count*3; i++ {
+		if count == 5 {
+			fmt.Print("\x1b[30m\x1b[46m:\x1b[0m")
+		} else if 2 <= count && count <= 4 {
+			fmt.Print("\x1b[37m\x1b[43m:\x1b[0m")
+		} else if count <= 1 {
+			fmt.Print("\x1b[37m\x1b[45m:\x1b[0m")
+		}
+	}
+
+	for i := 0; i < 15-count*3; i++ {
+		if count == 5 {
+			fmt.Print(":")
+		} else if 2 <= count && count <= 4 {
+			fmt.Print(":")
+		} else if count <= 1 {
+			fmt.Print(":")
+		}
+	}
+
+	fmt.Println("")
 	fmt.Println("安全レベル:", count, "(MAX 5)")
 
 }
